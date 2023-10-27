@@ -1,11 +1,103 @@
 from node.node import *
 
 def main():
-    testInit()
+    #testInit()
 
     #testInit
     #testGetterAndSetters()
-    testAddNodeAfter()
+    #testAddNodeAfter()
+    testRemoveNodeAfter()
+    review()
+
+def review():
+    print('Review')
+
+    #Question 1 
+    head = node('X',None)
+    head = node('X', head)
+    head = node('X', head)
+    head = node('X', head)
+
+    #Question 2
+    selection1 = head
+
+    #Question 3 
+    selection1.addNodeAfter('O')
+
+    #Question 4 
+    selection1 = selection1.getLink()
+    selection1 = selection1.getLink()
+
+    #Question 5 
+    selection1.addNodeAfter('O')
+
+    #Question 6
+    selection1 = selection1.getLink()
+    selection1 = selection1.getLink()
+
+    #Question 7 
+    selection1.addNodeAfter('O')
+
+    # Question 8 
+    tail = head
+
+    #Question 9 
+    tail = tail.getLink()
+    tail = tail.getLink()
+    tail = tail.getLink()
+    tail = tail.getLink()
+    tail = tail.getLink()
+    tail = tail.getLink()
+
+    #Question 10
+    selection2 = head
+
+    #Question 11
+    selection2 = selection2.getLink()
+    selection2 = selection2.getLink()
+
+    #Question 12
+    head.setData('A')
+    selection2.setData('A')
+    selection2.setData('A')
+    tail.setData('A')
+
+    #Question 13
+    head.removeNodeAfter()
+    selection1.removeNodeAfter()
+    selection1.removeNodeAfter()
+
+    #Question 14
+
+def testRemoveNodeAfter():
+    print("Testing Remove Node After")
+
+     # construct a node with data equal to S and link equal to None
+    # and assign its reference to head
+    head = node('S', None) # S
+    
+    # construct a node with data equla to B anf link equla to head
+    # and assign its reference to head
+    head = node('B', head) # B -> s
+
+    # construct a node with data equal to O and link equal to head
+    # and assign its reference to head
+    head = node('O', head) # O -> B -> S
+
+    # consctruct a node with data equal to J and link equal to head
+    # and assign its reference to head
+    head = node('J', head) # J -> O -> B -> S
+
+    print("The head node contains data:", head.getData())
+
+    # remove the node after the node head refers to (node that has data equal to S)
+    head.removeNodeAfter()
+
+    head = head.getLink()
+
+    print("The head node contains data:", head.getData())
+
+    
 
 def testAddNodeAfter():
     print("Testing Add Node After")
