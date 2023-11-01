@@ -8,6 +8,63 @@ def main():
     #testAddNodeAfter()
     testRemoveNodeAfter()
     review()
+    testListLength()
+    testListSearch()
+
+def testListSearch():
+    print("Testing List Search")
+
+    # construct a node with data equal to S and link equal to None
+    # and assign its reference to head
+    head = node('S', None) # S
+    
+    # construct a node with data equla to B anf link equla to head
+    # and assign its reference to head
+    head = node('B', head) # B -> s
+
+    # construct a node with data equal to O and link equal to head
+    # and assign its reference to head
+    head = node('O', head) # O -> B -> S
+
+    # consctruct a node with data equal to J and link equal to head
+    # and assign its reference to head
+    head = node('J', head) # J -> O -> B -> S
+
+    print("Head contains", node.listSearch(head,'J').getData())
+    print("Head contains", node.listSearch(head,'O').getData())
+    print("Head contains", node.listSearch(head,'B').getData())
+    print("Head contains", node.listSearch(head,'S').getData())
+
+    if(node.listSearch(head, 'Z')!= None):    
+        print("Head contains", node.listSearch(head,'Z').getData())
+
+    else:
+        print("Head doesn't contain Z.")
+
+
+
+
+
+def testListLength():
+    print("Testing List Length")
+
+     # construct a node with data equal to S and link equal to None
+    # and assign its reference to head
+    head = node('S', None) # S
+    
+    # construct a node with data equla to B anf link equla to head
+    # and assign its reference to head
+    head = node('B', head) # B -> s
+
+    # construct a node with data equal to O and link equal to head
+    # and assign its reference to head
+    head = node('O', head) # O -> B -> S
+
+    # consctruct a node with data equal to J and link equal to head
+    # and assign its reference to head
+    head = node('J', head) # J -> O -> B -> S
+
+    print("Length of head is:", node.listlength(head))
 
 def review():
     print('Review')
@@ -59,7 +116,7 @@ def review():
     #Question 12
     head.setData('A')
     selection2.setData('A')
-    selection2.setData('A')
+    selection1.setData('A')
     tail.setData('A')
 
     #Question 13
@@ -97,7 +154,10 @@ def testRemoveNodeAfter():
 
     print("The head node contains data:", head.getData())
 
-    
+    # remove the node after the head refers to (node that contains data value equal to S)
+    head.removeNodeAfter() #S
+
+    print("The head node contains data:", head.getData())
 
 def testAddNodeAfter():
     print("Testing Add Node After")
