@@ -12,7 +12,103 @@ def main():
     #testListSearch()
     #testListPosition()
     #testListCopy()
-    testListCopyWithTail()
+    #testListCopyWithTail()
+    testreview()
+
+
+def testreview():
+    #Question 1
+    print('Review')
+
+    #Question 1 
+    head = node('L',None)
+    head = node('I', head)
+    head = node('N', head)
+    head = node('K', head)
+    head = node('T', head)
+
+    #Question 2 
+    selection = head
+
+    #Question 3 
+    selection.setData('K')
+
+    #Question 4
+    selection.addNodeAfter('K')
+
+    #Question 5
+    selection = selection.getLink()
+
+    #Question 6
+    selection.addNodeAfter('E')
+
+    #Question 7
+    selection = selection.getLink()
+
+    #Question 8
+    selection.addNodeAfter('D')
+
+    #Question 9
+    selection = selection.getLink()
+
+    #Question 10
+    selection.addNodeAfter('L')
+
+    #Question 11
+    selection = selection.getLink()
+
+    #Question 12
+    selection.addNodeAfter('I')
+
+    #Question 13
+    print('How many nodes does head contain?')
+    print('How many nodes does selection contain?')
+
+    #Question 14
+    tail = selection
+
+    #Question 15
+    tail = tail.getLink()
+
+    #Question 16
+    print('How many nodes does tail contain?')
+
+    #Question 17
+    selection.removeNodeAfter()
+
+    #Question 18 
+    print('How many nodes does head contain?')
+    print('How many nodes does selection contain?')
+    print('How many nodes does tail contain?')
+
+    #Question 19
+    tail = tail.getLink()
+
+    #Question 20
+    tail = node('I',None)
+
+    #Question 21
+    print('How many nodes does head contain?')
+    print('How many nodes does selection contain?')
+    print('How many nodes does tail contain?')
+
+    #Question 22
+    print('Head contains the letter K')
+    print('Selection contains the letter I')
+
+
+
+    #Question 23
+    copy = node.listCopyWithTail(head)
+    
+    print('Copy head contains',node.listlength(copy[0],6).getData())
+   
+    print("Copy tail contains", node.listlength(copy[1], 1).getData())
+
+    #Question 24
+    
+
+
 
 
 def testListCopyWithTail():
