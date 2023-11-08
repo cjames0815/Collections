@@ -13,8 +13,79 @@ def main():
     #testListPosition()
     #testListCopy()
     #testListCopyWithTail()
-    testreview()
+    #testreview()
+    assignment()
 
+def assignment():
+
+    #Question 1 - creating a linked list using the variable head
+    head = node('1',None)
+    head = node('+', head)
+    head = node('1',head)
+    head = node ('=',head)
+    head = node('2', head)
+
+    #Question 2 - creating the second reference names operator 
+    #to the linked list of nodes
+
+    operator = head
+
+    #Question 3 - changing the node operator 
+    
+    operator = operator.getLink()
+
+    #Question 4 - creating a third reference named result to the linked list of nodes
+    result = operator
+
+    #Question 5 - changing the node result  for operator
+    
+    operator  = operator.getLink()
+
+    #Question 6 - changing the linked list of nodes for operator
+    operator = operator.getLink()
+
+    #Question 7 - changing the linked list of nodes for operator
+    operator = operator.getLink()
+
+    
+    #Question 8 - changing the linked list of nodes for operator
+    
+    operator = operator.getLink()
+
+    #Question 9 - changing the linked list of nodes for operator
+    operator = operator.getLink()
+
+    #Question 10 - changing the linked list of nodes for operator
+    
+    operator = operator.getLink()
+    
+
+
+    #Question 11 - changing the linked list of nodes for operator
+    operator = operator.getLink()
+    
+    #Question 12 displaying the following line to the terminal
+    print("Head contains 3 Nodes", node.listSearch (head, [3]).getData())
+    print("Operator contains 2 Nodes", node.listSearch (operator, [2]).getData())
+    print("Result contains 1 Node", node.listSearch (result, [1]).getData())
+
+    #Question 13 - displaying the following line to the terminal 
+    print("Head contains character 1", node.listSearch (head, [1]).getData())
+    print("Operator contains character 1", node.listSearch (operator, [1]).getData())
+    print("Result doesn't contain character 1", node.listSearch (result, [1]).getData())
+
+    #Question 14 - Creating lines of code that create the node copies 
+    copy = node.listCopyWithTail(head)
+    print("First node in copy[0] contains 3 nodes", copy[0].getData())
+    print("First node in copy[1] contains 1 node", copy[1].getData())
+
+    #Question 15 - Displaying code to the terminal 
+    print("copy[0] contains 3 nodes", copy[0].getData())
+    print("copy[1] contains 1 node", copy[1].getData())
+
+    #Question 16 - displaying code to the terminal 
+    print("Copy[0] contains the character", node.listSearch(head, [1]).getData())
+    print("Copy[1] does not contain the character", node.listSearch(operator, [1]).getData())
 
 def testreview():
     #Question 1
@@ -106,7 +177,7 @@ def testreview():
     print("Copy tail contains", node.listlength(copy[1], 1).getData())
 
     #Question 24
-    
+
 
 
 
