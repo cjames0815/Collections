@@ -91,7 +91,7 @@ class stack:
         """        
         return self.size() == 0 
 
-    def pop(self):
+    def peek(self):
         """Removes and returns the element at the head (top) of the calling stack
 
         Raises:
@@ -100,4 +100,51 @@ class stack:
         Returns:
             _types_: element at the top of the calling stack
         
-        """           
+        """
+        try:
+            #if the calling stack is empty, rasie error
+            if (self.isEmpty()) :
+                raise ValueError("Stack is empty")
+        except ValueError as e:
+            #display vlue error and exit
+            exit(e)
+        else:
+
+            #return data in node at the head (top) of the calling stack 
+            return self.__head.getData()
+    
+    def pop(self):
+        """Returns the element at the head (top) of the calling stack, without removing it.
+
+        Raises:
+            ValueError: indicates calling stack is empty
+        
+        Returns:
+            _types_: element at the top of the calling stack
+        
+        """
+        try:
+            #if the calling stack is empty, rasie error
+            if (self.isEmpty()) :
+                raise ValueError("Stack is empty")
+        except ValueError as e:
+            #display vlue error and exit
+            exit(e)
+        else:
+            #get data in node at the head (top) of the calling stack
+            top = self.__head.getData()
+
+            #advance head instance variable to next node
+            self.__head = self.__head.getLink()
+
+            #recompute the nu,ber of nodes in the calling stack
+            self.__manyNodes = node.listlength(self.__head)
+
+            #return data in node at the head (top) of the calling stack 
+            return top
+    
+    
+
+    
+
+        

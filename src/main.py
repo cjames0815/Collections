@@ -1,5 +1,6 @@
 from node.node import *
 from stack.stack import *
+from stack.balanceparens import *
 
 
 def main():
@@ -17,7 +18,100 @@ def main():
     #testListCopyWithTail()
     #testreview()
     #assignment()
-    testPush()
+    #testPush()
+    #testPop()
+    #testIsEmpty()
+    #testPeek()
+    print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y")) #False
+    print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y")) #False
+    print("Parenthesis are balanced?", balancedparens.isBalanced("({X+Y}*Z)")) #True
+    print("Parenthesis are balanced?", balancedparens.isBalanced("[A+B]*({X+Y}*Z)")) #True
+ 
+
+def testPeek():
+    print("Testing Peek /method in Stack Class")
+
+    s = stack()
+
+    print("Stack size is:", s.size())               #0
+    print("Stack contains:", s)                     #[]
+    s.push('S')
+    print("Stack size is:", s.size())               #1
+    print("Stack contains:", s)                     #[S]
+    print("Top element in stack is:", s.peek())     # S
+
+    #s.push('B')
+    s.push(1)                                     #2
+    print("Stack size is:", s.size())               #[S]
+    print("Stack contains:", s)                     #[B,S]
+    print("Top element in stack is:", s.peek())     #[B]
+
+    #s.push('O')
+    s.push(1,2)
+    print("Stack size is:", s.size())               #3
+    print("Stack contains:", s)                     #[O,B,S]
+    print("Top element in stack is:", s.peek())     #O
+
+    s.push('S')
+    s.push(1,2,3)
+    print("Stack size is:", s.size())               #4
+    print("Stack contains:", s)                     #[J,O,B,S]
+    print("Top element in stack is:", s.peek())     # J
+
+
+
+
+def testIsEmpty():
+    print("Testing Is Empty Method in Stack Class")
+
+    s = stack()
+    s.push('S')
+    s.push('B')
+    s.push('O')
+    s.push('J')
+
+    print("Stack size is:", s.size()) #4
+    print("Stack contains:", s)       #[JOBS]
+
+    while(not s.isEmpty()):
+        print("Just popped:", s.pop())
+
+    print("Stack size is:", s.size()) #0
+    print("Stack contains:", s)       # []
+
+    
+
+def testPop():
+    print("Testing Pop Method in Stack Class")
+
+    s = stack()
+    s.push('S')
+    s.push('B')
+    s.push('O')
+    s.push('J')
+
+    print("Stack size is:", s.size()) #4
+    print("Stack contains:", s)       #[JOBS]
+    print("Just popped:", s.pop())    #J
+
+    print("Stack size is:", s.size()) #3
+    print("Stack contains:", s)       #[OBS]
+    print("Just popped:", s.pop())    #O
+
+    print("Stack size is:", s.size()) #2
+    print("Stack contains:", s)       #[BS]
+    print("Just popped:", s.pop())    #B
+
+    print("Stack size is:", s.size()) #1
+    print("Stack contains:", s)       #[S]
+    print("Just popped:", s.pop())    #S
+
+    print("Just popped:", s.pop())
+
+
+
+def testPush():
+    print("Testing Push Method in Stack Class")
 
     s = stack()
     print("Stack size is:", s.size()) # 0
@@ -41,10 +135,6 @@ def main():
     s.push([1,2,3])
     print("Stack size is:", s.size()) # 4
     print("Stack contains:", s)       # [J O B S]
-
-
-def testPush():
-    print("Testing Push Method in Stack Class")
 
 def assignment():
 
