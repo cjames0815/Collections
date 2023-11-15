@@ -1,6 +1,8 @@
 from node.node import *
 from stack.stack import *
 from stack.balanceparens import *
+from stack.calculator import *
+from stack.serialsearch import*
 
 
 def main():
@@ -22,11 +24,49 @@ def main():
     #testPop()
     #testIsEmpty()
     #testPeek()
-    print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y")) #False
-    print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y")) #False
-    print("Parenthesis are balanced?", balancedparens.isBalanced("({X+Y}*Z)")) #True
-    print("Parenthesis are balanced?", balancedparens.isBalanced("[A+B]*({X+Y}*Z)")) #True
- 
+    #print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y")) #False
+    #print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y")) #False
+    #print("Parenthesis are balanced?", balancedparens.isBalanced("({X+Y}*Z)")) #True
+    #print("Parenthesis are balanced?", balancedparens.isBalanced("[A+B]*({X+Y}*Z)")) #True
+    #print("(((6+9)/3)*(6-4)) = ", calculator.evaluate("(((6+9)/3)*(6-4))"))
+    #print("(6+(3*(6-4))) = ", calculator.evaluate("(6+(3*(6-4)))"))
+    #print(" ((5+2)-(3*(6/9))) = ", calculator.evaluate("((5+2)-(3*(6/9)))"))
+    #print("((5*2)-(3*(6/2))) = ", calculator.evaluate("((5*2)-(3*(6/2)))"))
+    
+    
+    testSerialSearch()
+
+
+def testSerialSearch():
+    
+    # create an empty stack
+    s = stack()
+    # initialize first
+    first = 0
+    # initialize size
+    size = 0
+    # initialize target
+    target = 0
+    # push -7 onto the top of the stack                     
+    s.push('-7')
+    # push 42 onto the top of the stack                    
+    s.push('-42')
+    # push 70 onto the top of the stack                  
+    s.push('70')
+    # push 39 onto the top of the stack              
+    s.push('-39')
+    # push 3 onto the top of the stack                     
+    s.push('3')
+    # push 63 onto the top of the stack                    
+    s.push('63')
+    # push 8 onto the top of the stack
+    s.push('8')
+    # print the stack
+    print("Stack contains:", s)    
+    # call serial search method and display its return.
+    print ('Target found at index ...', serialsearch(s, first, size, target))
+    
+
 
 def testPeek():
     print("Testing Peek /method in Stack Class")
@@ -47,13 +87,13 @@ def testPeek():
     print("Top element in stack is:", s.peek())     #[B]
 
     #s.push('O')
-    s.push(1,2)
+    s.push((1,2))
     print("Stack size is:", s.size())               #3
     print("Stack contains:", s)                     #[O,B,S]
     print("Top element in stack is:", s.peek())     #O
 
     s.push('S')
-    s.push(1,2,3)
+    s.push([1,2,3])
     print("Stack size is:", s.size())               #4
     print("Stack contains:", s)                     #[J,O,B,S]
     print("Top element in stack is:", s.peek())     # J
