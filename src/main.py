@@ -4,6 +4,8 @@ from stack.balanceparens import *
 from stack.calculator import *
 from stack.serialsearch import*
 from stack.selectionsort import*
+from queues.queue import*
+from queues.palindrome import *
 
 def main():
     #testInit()
@@ -36,8 +38,127 @@ def main():
     
     #testSerialSearch()
 
-    testSelectionSort()
+    #testSelectionSort()
 
+    #testEnqueue()
+    #testQueueisEmpty()
+    #testDequeue()
+    #testQueuePeek()
+    testIsPalindrome()
+
+def testIsPalindrome():
+    exp = input("Please enter an expression:")
+
+    if (palindrome.isPalindrome(exp)):
+        print("Your expression is a palindrome.")
+    
+    else:
+        print("Your expression is not a palindrome")
+
+def testQueuePeek():
+    print("Testing QueuePeek /method in Queue Class")
+
+    s = queue()
+
+    print("Queue size is:", s.size())               #0
+    print("Queue contains:", s)                     #[]
+    s.enqueue('S')
+    print("Queue size is:", s.size())               #1
+    print("Queue contains:", s)                     #[S]
+    print("Front element in queue is:", s.peek())     # S
+
+    #s.push('B')
+    s.enqueue(1)                                     #2
+    print("Queue size is:", s.size())               #[S]
+    print("Queue contains:", s)                     #[B,S]
+    print("Front element in queue is:", s.peek())     #[B]
+
+    #s.push('O')
+    s.enqueue((1,2))
+    print("Queue size is:", s.size())               #3
+    print("Queue contains:", s)                     #[O,B,S]
+    print("Front element in stack is:", s.peek())     #O
+
+    s.enqueue('S')
+    s.enqueue([1,2,3])
+    print("Queue size is:", s.size())               #4
+    print("Queue contains:", s)                     #[J,O,B,S]
+    print("Front element in queue is:", s.peek())     # J
+
+
+
+def testDequeue():
+    print("Testing Dequeue Method in Queue Class")
+
+    s = queue()
+    s.enqueue('S')
+    s.enqueue('B')
+    s.enqueue('O')
+    s.enqueue('J')
+
+    print("Queue size is:", s.size()) #4
+    print("Queue contains:", s)       #[JOBS]
+    print("Just dequeued:", s.dequeue())    #J
+
+    print("Queue size is:", s.size()) #3
+    print("Queue contains:", s)       #[OBS]
+    print("Just dequeued:", s.dequeue())    #O
+
+    print("Queue size is:", s.size()) #2
+    print("Queue contains:", s)       #[BS]
+    print("Just dequeued:", s.dequeue())    #B
+
+    print("Queue size is:", s.size()) #1
+    print("Queue contains:", s)       #[S]
+    print("Just dequeued:", s.dequeue())    #S
+
+    print("Just dequeued:", s.dequeue())
+
+
+
+def testQueueisEmpty():
+    print("Testing Is Empty Method in Queue Class")
+
+    s = queue()
+    s.enqueue('S')
+    s.enqueue('B')
+    s.enqueue('O')
+    s.enqueue('J')
+
+    print("Queue size is:", s.size()) #4
+    print("Queue contains:", s)       #[JOBS]
+
+    while(not s.isEmpty()):
+        print("Just dequeued:", s.dequeue())
+
+    print("Queue size is:", s.size()) #0
+    print("Queue contains:", s)       # []
+
+def testEnqueue():
+    print("Testing Enqueue Method in Stack Class")
+
+    s = queue()
+    print("Queue size is:", s.size()) # 0
+    print("Queue contains:", s)       # []
+
+    s.enqueue('S')
+    print("Queue size is:", s.size()) # 1
+    print(" Queue contains:", s)       # [S]
+
+    #s.push('B')
+    s.enqueue(1)
+    print("Queue size is:", s.size()) # 2
+    print("Queue contains:", s)       # [B S]
+
+    #s.push('O')
+    s.enqueue((1,2))
+    print("Queue size is:", s.size()) # 3
+    print("Queue contains:", s)       # [O B S]
+
+    #s.push('J')
+    s.enqueue([1,2,3])
+    print("Queue size is:", s.size()) # 4
+    print("Queue contains:", s)       # [J O B S]
 
 
 def testSelectionSort():
