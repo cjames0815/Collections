@@ -1,11 +1,13 @@
-from node.node import *
-from stack.stack import *
-from stack.balanceparens import *
-from stack.calculator import *
+from node.node import*
+from stack.stack import*
+from stack.balanceparens import*
+from stack.calculator import*
 from stack.serialsearch import*
 from stack.selectionsort import*
 from queues.queue import*
-from queues.palindrome import *
+from queues.palindrome import*
+from queues.practiceassignment import*
+
 
 def main():
     #testInit()
@@ -44,7 +46,24 @@ def main():
     #testQueueisEmpty()
     #testDequeue()
     #testQueuePeek()
-    testIsPalindrome()
+    #testIsPalindrome()
+    testpracticeassignment1()
+
+def testpracticeassignment1():
+    
+    
+    exp = input("Please enter an expression:")
+    while exp != '':
+
+        if (practiceassignment.practiceassignment1(exp)):
+            print("Your expression is a palindrome.")
+    
+        else:
+            print("Your expression is not a palindrome")
+
+        exp = input("Please enter an expression:")
+
+
 
 def testIsPalindrome():
     exp = input("Please enter an expression:")
