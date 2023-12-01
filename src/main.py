@@ -7,7 +7,7 @@ from stack.selectionsort import*
 from queues.queue import*
 from queues.palindrome import*
 from queues.practiceassignment import*
-
+from queues.majorassignment import*
 
 def main():
     #testInit()
@@ -47,7 +47,22 @@ def main():
     #testDequeue()
     #testQueuePeek()
     #testIsPalindrome()
-    testpracticeassignment1()
+    #testpracticeassignment1()
+    testmajorassignment1()
+
+def testmajorassignment1():
+    exp = input("Please enter an expression:")
+    
+
+    if (majorassignment.majorassignment1(exp)):
+       print("Your expression is a palindrome.")
+    
+    else:
+        print("Your expression is not a palindrome")
+        print(f"Mismatch detected at: ")
+
+    
+    
 
 def testpracticeassignment1():
     
