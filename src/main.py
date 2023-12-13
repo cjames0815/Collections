@@ -9,6 +9,7 @@ from queues.palindrome import*
 from queues.practiceassignment import*
 from queues.majorassignment import*
 
+
 def main():
     #testInit()
 
@@ -48,7 +49,120 @@ def main():
     #testQueuePeek()
     #testIsPalindrome()
     #testpracticeassignment1()
-    testmajorassignment1()
+    #testmajorassignment1()
+    santaClaus()
+    getPalindromes()
+    testRecursion()
+
+#Question 1
+def santaClaus():
+    s = node('A',None)
+    s = node('T', s)
+    s = node('N', s)
+    s = node('A', s)
+    s = node('S', s)
+
+    s.setData('A')
+    s.addNodeAfter('A')
+    s.setData('T')
+    s.addNodeAfter('T')
+    s.setData('N')
+    s.addNodeAfter('N')
+    s.setData('A')
+    s.addNodeAfter('A')
+    s.setData('S')
+    s.addNodeAfter('S')
+
+#Question 2
+    c = node('S', None)
+    c = node('U', c)
+    c = node('A', c)
+    c = node('L', c)
+    c = node('C', c)
+
+    c.setData('S')
+    c.addNodeAfter('S')
+    c.setData('U')
+    c.addNodeAfter('U')
+    c.setData('A')
+    c.addNodeAfter('A')
+    c.setData('L')
+    c.addNodeAfter('L')
+    c.setData('C')
+    c.addNodeAfter('C')
+
+
+#Question 3
+    selection = s
+
+#Question 4
+    selection = selection.getLink()
+    selection = selection.getLink()
+    selection = selection.getLink()
+    selection = selection.getLink()
+
+#Question 5
+    selection.setLink(s)
+
+#Question 6
+def getPalindromes():
+    s1 = stack()
+    s2 = stack()
+    mismatches = 0
+    
+
+
+    ispalindrome = list(input("Enter ten words speparated by a space:")) 
+    for pal in ispalindrome:
+        if pal == ispalindrome:
+            s1.push(pal)
+
+    for pal in ispalindrome:
+        if pal != ispalindrome:
+            s2.push(pal)
+
+    
+            #if the current character is an alphabetic character
+        if pal.isalpha():
+                #push it onto the stack 
+            s1.push(pal)
+            s2.push(pal)
+
+
+    print('These words are palindromes', end= " ")
+    while(not  s1.isEmpty()):
+        print(s1.pop(), end="")
+    print(pal)
+
+    print('These words are not palindromes', end= " ")
+    while(not  s2.isEmpty()):
+        print(s2.pop(), end="")
+    print(pal)
+
+    while (not s1.isEmpty()):
+            #if the element at the front of the queue isn't 
+            #equal to the element at the top of tge stack
+            if (s1.pop() != s2.pop()):
+                #increment mismatches
+                mismatches += 1
+
+        #return True if mismatches is equal to 0, else return False
+            return(mismatches == 0)
+
+    
+
+#Question 7
+def testRecursion():
+    recursion.dis(-10, -8, -6, -4, -2, 0 , 2, 4, 6, 8 ,10) 
+
+    #I am not sure why this errors out as a positional argument becasue on the code in the review it is put inserted like this. The other method in the other .py works
+    # this is the only this erroring out.  
+    
+    
+
+
+
+
 
 def testmajorassignment1():
     exp = input("Please enter an expression:")

@@ -1,5 +1,4 @@
 from node.node import *
-
 class stack:
     """Stack class that uses linked lists of nodes as its underlying data structure. 
     """
