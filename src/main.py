@@ -52,7 +52,7 @@ def main():
     #testmajorassignment1()
     santaClaus()
     getPalindromes()
-    testRecursion()
+    
 
 #Question 1
 def santaClaus():
@@ -151,12 +151,9 @@ def getPalindromes():
 
     
 
-#Question 7
-def testRecursion():
-    recursion.dis(-10, -8, -6, -4, -2, 0 , 2, 4, 6, 8 ,10) 
 
-    #I am not sure why this errors out as a positional argument becasue on the code in the review it is put inserted like this. The other method in the other .py works
-    # this is the only this erroring out.  
+
+    
     
     
 
